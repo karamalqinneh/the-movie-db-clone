@@ -1,1 +1,23 @@
-<p>search-banner works!</p>
+<section class="banner">
+  <h1 class="text">Welcome.</h1>
+  <h4 class="text">
+    Millions of movies, TV shows and people to discover. Explore now.
+  </h4>
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search for a movie, tv show, person......"
+      aria-describedby="button-addon2"
+      [(ngModel)]="searchQuery"
+    />
+    <button
+      class="btn btn-outline-secondary"
+      type="button"
+      id="button-addon2"
+      (click)="onClick()"
+    >
+      Search
+    </button>
+  </div>
+</section>

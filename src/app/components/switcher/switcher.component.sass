@@ -1,0 +1,40 @@
+@import "../../variables"
+
+.main-container
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    margin-left: 5vw
+    margin-top: 5vh
+
+.name
+    font-size: 1.5rem
+    font-weight: 500
+
+.switch-container
+    display: flex
+    justify-content: space-between
+    border: 1.5px solid black
+    border-radius: 30px
+    height: 3.5vh
+    align-items: center
+    padding: 0.9rem 0px
+    margin-left: 3vw
+    font-size: 1.25rem
+
+
+.item
+    display: inline-flex
+    align-content: center
+    align-items: center
+    justify-content: center
+    transition: -webkit-text-fill-color 0.5s
+    color: $--tmdbDarkBlue
+    font-weight: 500
+    cursor: pointer
+    padding: 0px 20px
+
+.active
+    background-color: $--tmdbDarkBlue
+    color: $--tmdbLightGreen
+    border-radius: 30px

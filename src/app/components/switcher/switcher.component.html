@@ -1,1 +1,12 @@
-<p>switcher works!</p>
+<div class="main-container">
+  <h3 class="name">{{ tag }}</h3>
+  <div class="switch-container" #switchDiv (click)="handleActiveClass($event)">
+    <div
+      class="item"
+      *ngFor="let item of items; index as num"
+      [ngClass]="{ active: num == 0 }"
+    >
+      {{ item }}
+    </div>
+  </div>
+</div>
