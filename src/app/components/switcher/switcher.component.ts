@@ -1,4 +1,12 @@
-import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  Input,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 
 @Component({
   selector: 'app-switcher',
@@ -9,18 +17,21 @@ export class SwitcherComponent implements OnInit {
   @ViewChild('switchDiv') switchDiv!: ElementRef;
   @Input() tag!: string;
   @Input() items!: any;
+  @Output() classChange = new EventEmitter();
+  current!: string;
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.items);
+    this.current = this.items[0];
   }
 
   handleActiveClass(event: any): void {
     const children = [].slice.call(this.switchDiv.nativeElement.children);
-    console.log(children);
     children.forEach((ele: any) => {
       ele.classList.remove('active');
     });
     event.target.classList.add('active');
+    this.current = event.target.innerHTML;
+    this.classChange.emit(this.current);
   }
 }

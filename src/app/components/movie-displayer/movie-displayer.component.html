@@ -1,1 +1,8 @@
-<app-switcher [items]="['test1', 'test2']" tag="What's Popular"></app-switcher>
+<app-switcher
+  (classChange)="updateData($event)"
+  [items]="popular"
+  tag="What's Popular"
+></app-switcher>
+<div class="popular">
+  <app-movie-card *ngFor="let movie of data" [movie]="movie"></app-movie-card>
+</div>

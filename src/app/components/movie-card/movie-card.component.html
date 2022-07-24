@@ -1,1 +1,11 @@
-<p>movie-card works!</p>
+<div class="main-container">
+  <div (click)="handleRoute()" class="img-container">
+    <div class="options">...</div>
+    <img [attr.src]="getPoster(movie.poster_path)" />
+    <div class="rate">
+      <p>{{ movie.vote_average * 10 }}</p>
+    </div>
+  </div>
+  <h6>{{ movie.original_title }}</h6>
+  <p class="date">{{ movie.release_date }}</p>
+</div>
